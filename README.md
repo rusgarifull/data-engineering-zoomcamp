@@ -15,36 +15,37 @@
 ### [Week 1: Introduction & Prerequisites](week_1_basics_n_setup)
 
 * Big Picture
-   * Introduction to all instructors
-   * What to expect in this course
-   * Architecture / Data Flow
-   * What do we want to build (DE Concepts using Taxi Rides, and end results)
-* GCP
-   * Intro to GCP - Concepts: IAM, Cloud Storage, BigQuery (relevant components)
-   * What GCP is, why we need it
-* Docker
-   * What docker is, why we need it
-   * Running postgres locally with docker
-   * Putting some data for testing to local postres with Python
-   * Packaging this script in docker
-   * Running postgres and the script in one network
-   * Docker compose and running pgadmin and postres together with docker-compose
-* Data and SQL
-   * [Dataset: Taxi Rides NY dataset](dataset.md)
-   * Experimentation: Taking a first look at the data 
-   * Relevant SQL Queries (Refresher): group by, joins, window function, union
-* Terraform (Sejal)
-   * [ ] Intro to Terraform - Concepts
+   * [x] Introduction to all instructors
+   * [x] What to expect in this course
+   * [x] Architecture / Data Flow
+   * [x] What do we want to build
+* GCP (5 mins)
+   * [x] Intro to GCP - Concepts: IAM, Cloud Storage, BigQuery (relevant components)
+   * [x] What is GCP, why we need it
+* [Docker (45 mins)](week_1_basics_n_setup/2_docker_sql)
+   * [x] What is Docker
+   * [x] Running Postgres locally with Docker
+   * [x] Putting some data for testing to local postres with Python
+   * [x] Packaging this script in docker
+   * [x] Running postgres and the script in one network
+   * [x] Docker compose and running pgadmin and postres together with docker-compose
+* [Data and SQL (15 mins)](week_1_basics_n_setup/2_docker_sql)
+   * [x] [Dataset: Taxi Rides NY dataset](dataset.md)
+   * [x] Experimentation: Taking a first look at the data 
+   * [x] Relevant SQL Queries (Refresher): group by, joins, window function, union
+* [Terraform (45-60 mins)](week_1_basics_n_setup/1_terraform_gcp)
+   * [x] Intro to Terraform - Concepts
    * [x] Setting up GCP with TF: Storage, BigQuery
+* [Homework](week_1_basics_n_setup/homework.md)
 
-Duration: 1-1.5h
+Duration: 2-2.5h
 
 
 ### [Week 2: Data ingestion](week_2_data_ingestion)
 
 Goal: Orchestrating a job to ingest web data to a Data Lake in its raw form.
 
-Instructor: Sejal
+Instructor: Sejal & Alexey
 
 * Data Lake (GCS) -- 10 mins
   * Basics, What is a Data Lake
@@ -52,8 +53,8 @@ Instructor: Sejal
   * Alternatives to components (S3/HDFS, Redshift, Snowflake etc.)
 * Orchestration (Airflow) -- 15 mins
   * Basics
-  * What is an Orchestration Pipeline
-  * ...
+    * What is an Orchestration Pipeline?
+    * What is a DAG?
 
 * Demo:
   * Setup: (15 mins)
@@ -114,7 +115,7 @@ Instructor: Victoria
 * Extra knowledge:
     * DBT cli (local)
 
-Duration: 1.5-2h    
+Duration: 2h    
 
 
 ### [Week 5: Batch processing](week_5_batch_processing)
@@ -148,26 +149,14 @@ Instructor: Ankush
     * Partitoning of Kafka topic
     * Replication of Kafka topic
 * Consumer-producer
+* Schemas (avro)
 * Streaming
     * Kafka streams
-    * spark streaming-Transformation
 * Kafka connect
-* KSQLDB?
-* streaming analytics ???
-* (pretend rides are coming in a stream)
 * Alternatives (PubSub/Pulsar)
 
-Duration: 1-1.5h
+Duration: 1.5h
 
-### Upcoming buzzwords
-
-* Delta Lake/Lakehouse
-    * Databricks
-    * Apache iceberg
-    * Apache hudi
-* Data mesh
-
-Duration: 10 mins
 
 
 ### [Week 7, 8 & 9: Project](project)
@@ -176,12 +165,37 @@ Duration: 10 mins
 
 Duration: 2-3 weeks
 
+* Upcoming buzzwords
+  *  Delta Lake/Lakehouse
+    * Databricks
+    * Apache iceberg
+    * Apache hudi
+  * Data mesh
+  * KSQLDB
+  * Streaming analytics
+  * Mlops
+  
+Duration: 30 mins
 
-## Architecture diagram
+## Overview
 
+### Architecture diagram
 <img src="images/architecture/arch_1.jpg"/>
 
-## Prerequisites
+### Technologies
+* *Google Cloud Platform (GCP)*: Cloud-based auto-scaling platform by Google
+  * *Google Cloud Storage (GCS)*: Data Lake
+  * *BigQuery*: Data Warehouse
+* *Terraform*: Infrastructure-as-Code (IaC)
+* *Docker*: Containerization
+* *SQL*: Data Analysis & Exploration
+* *Airflow*: Pipeline Orchestration
+* *DBT*: Data Transformation
+* *Spark*: Distributed Processing
+* *Kafka*: Streaming
+
+
+### Prerequisites
 
 To get most out of this course, you should feel comfortable with coding and command line,
 and know the basics of SQL. Prior experience with Python will be helpful, but you can pick 
