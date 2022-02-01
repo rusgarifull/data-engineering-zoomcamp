@@ -1,0 +1,2 @@
+python ingest_data.py --user=root --password=root --host=localhost --port=5431 --db=ny_taxi --table_name=taxi_zones --url="https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
+python ingest_data.py --user=root --password=root --host=localhost --port=5431 --db=ny_taxi --table_name=yellow_taxi_trips --url="https://s3.amazonaws.com/nyc-tlc/trip+data/yellow_tripdata_2021-01.csv" --date_columns tpep_pickup_datetime tpep_dropoff_datetime
