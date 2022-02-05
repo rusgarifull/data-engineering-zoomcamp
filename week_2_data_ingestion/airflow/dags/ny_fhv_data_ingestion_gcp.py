@@ -7,14 +7,13 @@ from airflow.operators.python import PythonOperator
 
 from utils import upload_to_gcs, format_to_parquet
 
-
 # airflow metadata
 DAG_ID = "ny_fhv_data_ingestion_gcp"
 
 # GCS location
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
-GCS_FOLDER = 'taxi_zones'
+GCS_FOLDER = 'ny_fhv'
 
 # SOURCE dataset
 DATASET_FILE = "fhv_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.csv"
@@ -28,7 +27,7 @@ PARQUET_FILE = DATASET_FILE.replace('.csv', '.parquet')
 default_args = {
     "owner": "airflow",
     "start_date": datetime(2019, 1, 1),
-    "end_date": datetime(2019, 2, 1),
+    "end_date": datetime(2020, 12, 1),
     "depends_on_past": False,
     "retries": 1,
 }

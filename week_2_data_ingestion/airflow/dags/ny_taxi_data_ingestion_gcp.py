@@ -13,7 +13,7 @@ DAG_ID = "ny_taxi_data_ingestion_gcp"
 # GCS location
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
-GCS_FOLDER = 'taxi_zones'
+GCS_FOLDER = 'ny_taxi_data'
 
 # SOURCE dataset
 DATASET_FILE = "yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.csv"
